@@ -29,7 +29,7 @@ app.get("/:number_of_bottles", function (req, res) {
 			}">Take one down and pass it around</a>`
 		);
 
-		// retun no more bottles
+		// return no more bottles
 	} else {
 		res.send("No more bottles of beer on the wall");
 	}
