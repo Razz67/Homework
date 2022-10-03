@@ -6,7 +6,7 @@ class New extends React.Component {
 		return (
 			<DefaultLayout title="create a new Log">
 				<h1>New Log</h1>
-				<form action={`/logs/${log._id}?_method=POST`} method="POST">
+				<form action={`/logs/${log._id}>?_method=POST`} method="POST">
 					<label htmlFor="name">Title:</label>
 					<input type="text" id="title" name="title" />
 					<br />
@@ -17,8 +17,8 @@ class New extends React.Component {
 					<br />
 					<br />
 
-					<label htmlFor="isShipBroken">Is Ship Broken?</label>
-					<input type="checkbox" id="isShipBroken" name="isShipBroken" />
+					<label htmlFor="shipIsBroken">Is Ship Broken?</label>
+					<input type="checkbox" id="shipIsBroken" name="shipIsBroken" />
 					<br />
 					<br />
 

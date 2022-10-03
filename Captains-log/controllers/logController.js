@@ -67,6 +67,33 @@ const createNewLog = (req, res) => {
 	});
 };
 
+const seedData = (req, res) => {
+	Log.deleteMany({}, (err, deletedLogs) => {
+		if (err) {
+			res.status(400).json(err);
+			console.log(deletedLogs)
+		} else {
+			Log.create(seed, (err, createdLogs) => {
+				if (err) {
+					res.status(400).json(err);
+				} else {
+					res.status(200).redirect("/logs");
+				}
+			});
+		}
+	});
+};
+
+const clearData = (req, res) => {
+	Log.deleteMany({}, (err, deletedLogs) => {
+		if (err) {
+			res.status(400).json(err);
+		} else {
+			res.status(200).redirect("/logs");
+		}
+	});
+};
+
 
 //EDIT ROUTE
 const showEditView = (req, res) => {
@@ -98,6 +125,8 @@ module.exports = {
 	findAllLogs,
 	showNewView,
 	createNewLog,
+	seedData,
+	clearData,
 	showOneLog,
 	showEditView,
 	updateOneLog,

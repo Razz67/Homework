@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:antiquewhite;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: blue;
+    color: #FFF;
+    font-weight: 600;
+}
+
+.container {
+    display: grid;
+    
+}

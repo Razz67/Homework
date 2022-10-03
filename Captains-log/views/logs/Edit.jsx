@@ -8,17 +8,13 @@ class Edit extends React.Component {
 		return (
 			<DefaultLayout title="edit a log" group="logs">
 				<h1>Edit Page</h1>
-				<form action={`/logs/${log._id}?_method=PUT`} method="POST">
-					<label htmlFor="title">Title:</label>
-					<input type="text" id="title" name="title" defaultValue={log.name} />
+				<form action={`/logs/${log.id}>?_method=POST`} method="POST">
 
-					<label htmlFor="color">Color:</label>
-					<input
-						type="text"
-						id="color"
-						name="color"
-						defaultValue={log.color}
-					/>
+					<label htmlFor="title">Title:</label>
+					<input type="text" id="title" name="title" defaultValue={log.title} />
+
+					<label htmlFor="entry">Entry:</label>
+					<input	type="text" id="entry" name="entry" defaultValue={log.entry} />
 
 					<label htmlFor="isShipBroken">Is Ship Damaged:</label>
 					<input

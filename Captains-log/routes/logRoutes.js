@@ -19,8 +19,6 @@ const {
 } = require("../controllers/logController");
 
 // Bring in controller object (with methods attached)
-// const logController = require('../controllers/logController')
-// Example: router.get('/', logController.findAllLogs)
 
 // I.N.D.U.C.E.S
 // Index, New, Delete, Update, Create, Edit, Show
@@ -29,7 +27,7 @@ const {
 router.get("/", findAllLogs);
 
 // Setup "new" route
-router.get("/new", showNewView);
+router.get("logs/new", showNewView);
 
 // Setup "destroy" route
 router.delete("/:id", deleteOneLog);

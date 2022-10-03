@@ -6,21 +6,21 @@ class Index extends React.Component {
 		const { logs } = this.props;
 
 		return (
-			<DefaultLayout title="All Logs" group="logs">
+			<DefaultLayout className="container" title="All Logs" group="logs">
 				<h1>Logs Index Page</h1>
 				<ul id="logs-index">
-					{logs.map((log) => {
+					{logs.map((logs, _id) => {
 						return (
-							<li key={logs._id}>
-								The <a href={`/logs/${log._id}`}>{log.title}</a> created on { log.created } the
-								{log.isShipBroken} is damaged.
+							<li key={_id}>
+								The <a href={`/logs/${_id}`}>{logs.title}</a> { logs.entry } the
+								{logs.shipIsBroken}.
 							</li>
 						);
 					})}
 				</ul>
 
 				<nav>
-					<a href="/logs/New">Create log</a>
+					<a href="/logs/new">Create log</a>
 				</nav>
 			</DefaultLayout>
 		);
