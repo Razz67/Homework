@@ -11,16 +11,16 @@ class Index extends React.Component {
 				<ul id="logs-index">
 					{logs.map((log) => {
 						return (
-							<li key={log._id}>
-								The <a href={`/logs/${log._id}`}>{log.name}</a> is{" "}
-								{log.color}.
+							<li key={logs._id}>
+								The <a href={`/logs/${log._id}`}>{log.title}</a> created on { log.created } the
+								{log.isShipBroken} is damaged.
 							</li>
 						);
 					})}
 				</ul>
 
 				<nav>
-					<a href="/logs/New">Create a new a log</a>
+					<a href="/logs/New">Create log</a>
 				</nav>
 			</DefaultLayout>
 		);

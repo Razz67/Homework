@@ -3,18 +3,15 @@ const express = require("express");
 // Create a special router object for our routes
 const router = express.Router();
 
-// Loading our Model of fruit
+// Loading our Model of logs
 const Log = require("../models/logs");
 
-// Bring in seed data
-// const seed = require("../models/seed");
 
 // Bring in controller functions (destructure methods)
 const {
 	findAllLogs,
 	showNewView,
 	createNewLog,
-	// seedStarterData,
 	showOneLog,
 	showEditView,
 	updateOneLog,
@@ -46,8 +43,6 @@ router.post("/logs", createNewLog);
 // Setup "edit" route
 router.get("/:id/edit", showEditView);
 
-// Setup "seed" route
-// router.get("/seed", seedStarterData);
 
 // Setup "show" route
 router.get("/:id", showOneLog);

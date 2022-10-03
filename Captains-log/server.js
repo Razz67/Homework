@@ -1,8 +1,9 @@
-// Load Express
-const express= require("express");
+// Require express
+const express = require("express");
 const methodOverride = require("method-override");
 
-// mongConfig
+
+// Require mongoose
 const mongoConfig = require("./config");
 
 // Bring in packaged routes
@@ -11,33 +12,37 @@ const logRoutes = require("./routes/logRoutes");
 // Require dotenv
 require("dotenv").config();
 
-// Create express app
+// Create a new express app
 const app = express();
 
 // Identify the port
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
-// Set up view engine
+// Connect to the database
+
+
+// set veiw engint to jsx
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
-// ********* Middleware **********
-// body parser
+// // // Require the controllers
+// // const logController = require("./controllers/logController");
+
+// // Use the controllers
+// app.use("/logs", logController);
+
+// Set up middleware
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static("public"));
-
-// express json
-app.use(express.json());
-
-// method override
 app.use(methodOverride("_method"));
-
+app.use(express.json());
 app.use("/logs", logRoutes);
 
+// Set up the listener
+app.listen(port, () => {
+    console.log("Listening on port", port);
+});
 
-// listen to port
-app.listen(port, () =>  console.log("listening on port", port));
 
-// Connect to mongo
+// Connect to the database
 mongoConfig();
