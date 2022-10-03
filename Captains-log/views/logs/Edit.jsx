@@ -3,28 +3,27 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 
 class Edit extends React.Component {
 	render() {
-		let { log } = this.props;
-
+		const { _id, title, entry, shipIsBroken } = this.props.log;
 		return (
-			<DefaultLayout title="edit a log" group="logs">
-				<h1>Edit Page</h1>
-				<form action={`/logs/${log.id}>?_method=POST`} method="POST">
+			<DefaultLayout className="container" title={`Edit ${title}`} group="logs">
+				<h1>Edit Log Page</h1>
+				<form action={`/logs/${_id}?_method=PUT`} method="POST">
+					<label htmlFor="title">Title: </label>
+					<input type="text" id="title" name="title" defaultValue={title} />
 
-					<label htmlFor="title">Title:</label>
-					<input type="text" id="title" name="title" defaultValue={log.title} />
+					<label htmlFor="textarea">Entry: </label>
+					<input type="textarea" id="entry" name="entry" defaultValue={entry} />
 
-					<label htmlFor="entry">Entry:</label>
-					<input	type="text" id="entry" name="entry" defaultValue={log.entry} />
-
-					<label htmlFor="isShipBroken">Is Ship Damaged:</label>
+					<label htmlFor="shipIsBroken">Is Ship Damaged:</label>
 					<input
 						type="checkbox"
-						id="isShipBroken"
-						name="isShipBroken"
-						defaultChecked={log.isShipBroken}
+						id="shipIsBroken"
+						name="shipIsBroken"
+						defaultChecked={shipIsBroken}
 					/>
-
-					<input type="submit" value="Edit Fruit" />
+					<nav>
+						<input type="submit" value="Edit Log" />
+					</nav>
 				</form>
 			</DefaultLayout>
 		);

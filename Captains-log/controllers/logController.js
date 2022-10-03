@@ -1,8 +1,7 @@
-const express = require("express");
-const router = express.Router();
 
 //Bring in SCHEMA
 const Log = require("../models/logs");
+const seed = require("../models/seed");
 
 // Bring in ROUTES
 
@@ -28,7 +27,7 @@ const deleteOneLog = (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-		res.status(200).redirect("logs");
+		res.status(200).redirect("/logs");
 		}
 	});
 };
@@ -40,11 +39,11 @@ const updateOneLog = (req, res) => {
 	} else {
 		req.body.shipIsBroken = false;
 	}
-	Log.findByIdAndUpdate(req.params.id, req.body, (err, foundLog)	=> {
+	Log.findByIdAndUpdate(req.params.id, req.body, (err, updatedLog)	=> {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).redirect(`/logs/${req.params.id}`);
+			res.status(200).redirect(`/logs/${updatedLog._id}`);
 		}
 	});
 };
@@ -64,33 +63,6 @@ const createNewLog = (req, res) => {
 		} else {
 			res.status(200).redirect("/logs");
 		}	
-	});
-};
-
-const seedData = (req, res) => {
-	Log.deleteMany({}, (err, deletedLogs) => {
-		if (err) {
-			res.status(400).json(err);
-			console.log(deletedLogs)
-		} else {
-			Log.create(seed, (err, createdLogs) => {
-				if (err) {
-					res.status(400).json(err);
-				} else {
-					res.status(200).redirect("/logs");
-				}
-			});
-		}
-	});
-};
-
-const clearData = (req, res) => {
-	Log.deleteMany({}, (err, deletedLogs) => {
-		if (err) {
-			res.status(400).json(err);
-		} else {
-			res.status(200).redirect("/logs");
-		}
 	});
 };
 
@@ -119,16 +91,44 @@ const showOneLog = (req, res) => {
 	});
 };
 
+// Seed Route
+const seedData = (req, res) => {
+	Log.deleteMany({}, (err, deletedLogs) => {
+		if (err) {
+			res.status(400).json(err);
+		} else {
+			Log.create(seed.logs, (err, createdLogs) => {
+				if (err) {
+					res.status(400).json(err);
+				} else {
+					res.status(200).redirect("/logs");
+				}
+			});
+		}
+	});
+};
+
+const clearData = (req, res) => {
+	Log.deleteMany({}, (err, deletedLogs) => {
+		if (err) {
+			res.status(400).json(err);
+		} else {
+			res.status(200).redirect("/logs");
+		}
+	});
+};
+
+
 
 
 module.exports = {
 	findAllLogs,
 	showNewView,
 	createNewLog,
-	seedData,
-	clearData,
 	showOneLog,
+	seedData,
 	showEditView,
 	updateOneLog,
 	deleteOneLog,
+	clearData
 };

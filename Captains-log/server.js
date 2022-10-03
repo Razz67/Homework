@@ -1,48 +1,40 @@
 // Require express
 const express = require("express");
-const methodOverride = require("method-override");
-
-
-// Require mongoose
-const mongoConfig = require("./config");
-
-// Bring in packaged routes
-const logRoutes = require("./routes/logRoutes");
+// Create a new express app
+const app = express();
 
 // Require dotenv
 require("dotenv").config();
 
-// Create a new express app
-const app = express();
+// Require mongoose
+const mongooseConfig = require("./config");
+
+const methodOverride = require("method-override");
+
 
 // Identify the port
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// Connect to the database
-
-
-// set veiw engint to jsx
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
-// // // Require the controllers
-// // const logController = require("./controllers/logController");
 
-// // Use the controllers
-// app.use("/logs", logController);
+
+// Bring in packaged routes
+const logRoutes = require("./routes/logRoutes");
+const { $where } = require("./models/logs");
 
 // Set up middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
-app.use(methodOverride("_method"));
 app.use(express.json());
-app.use("/logs", logRoutes);
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(express.static("public"));
+
+app.use("/logs", require("./routes/logRoutes"));
 
 // Set up the listener
-app.listen(port, () => {
-    console.log("Listening on port", port);
-});
+app.listen(PORT, () => console.log(`Listening on port", ${PORT}`));
 
 
 // Connect to the database
-mongoConfig();
+mongooseConfig();

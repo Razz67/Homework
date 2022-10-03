@@ -9,11 +9,14 @@ class Index extends React.Component {
 			<DefaultLayout className="container" title="All Logs" group="logs">
 				<h1>Logs Index Page</h1>
 				<ul id="logs-index">
-					{logs.map((logs, _id) => {
+					{logs.map((log) => {
 						return (
-							<li key={_id}>
-								The <a href={`/logs/${_id}`}>{logs.title}</a> { logs.entry } the
+							<li key={log._id}>
+								The <a href={`/logs/${log.id}`}>{logs.title}</a> { logs.entry } the
 								{logs.shipIsBroken}.
+								Created On: {logs.createdAt};
+
+								Edited: {logs.updatedAt}
 							</li>
 						);
 					})}

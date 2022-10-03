@@ -5,11 +5,31 @@
 }
 
 body {
-    background-color:antiquewhite;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    /* background-image: url(../images/starTrek.jfif);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.container {
+    display: grid;
+}
+
+p {
+    color: #000;
+}
+
+li {
+    list-style: none;
+    margin-left: 50px;
+    color: #000;
 }
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 a:hover {
@@ -18,7 +38,3 @@ a:hover {
     font-weight: 600;
 }
 
-.container {
-    display: grid;
-    
-}

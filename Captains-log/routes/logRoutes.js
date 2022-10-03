@@ -3,9 +3,6 @@ const express = require("express");
 // Create a special router object for our routes
 const router = express.Router();
 
-// Loading our Model of logs
-const Log = require("../models/logs");
-
 
 // Bring in controller functions (destructure methods)
 const {
@@ -16,9 +13,10 @@ const {
 	showEditView,
 	updateOneLog,
 	deleteOneLog,
+	seedData,
+	clearData,
 } = require("../controllers/logController");
 
-// Bring in controller object (with methods attached)
 
 // I.N.D.U.C.E.S
 // Index, New, Delete, Update, Create, Edit, Show
@@ -27,7 +25,7 @@ const {
 router.get("/", findAllLogs);
 
 // Setup "new" route
-router.get("logs/new", showNewView);
+router.get("/new", showNewView);
 
 // Setup "destroy" route
 router.delete("/:id", deleteOneLog);
@@ -36,11 +34,16 @@ router.delete("/:id", deleteOneLog);
 router.put("/:id", updateOneLog);
 
 // Setup "create" route
-router.post("/logs", createNewLog);
+router.post("/", createNewLog);
 
 // Setup "edit" route
 router.get("/:id/edit", showEditView);
 
+// Setup Clear Route
+router.get("/clear", clearData);
+
+// Setup Seed Route
+router.get("/seed", seedData);
 
 // Setup "show" route
 router.get("/:id", showOneLog);
