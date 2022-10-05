@@ -11,6 +11,8 @@ body {
     background-image: url(../images/starTrek.jfif);
     background-repeat: no-repeat;
     background-size: cover;
+    color: #FFF;
+    background-color: #000;
 }
 
 .container {

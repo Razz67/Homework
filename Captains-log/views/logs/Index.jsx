@@ -1,12 +1,12 @@
 const React = require("react");
-const DefaultLayout = require("../layouts/DefaultLayout");
+const EditPageLayout = require("../layouts/EditPageLayout");
 
 class Index extends React.Component {
 	render() {
 		const { logs } = this.props;
 
 		return (
-			<DefaultLayout className="container" title="All Logs" group="logs">
+			<EditPageLayout className="container" title="All Logs" group="logs">
 				<h1>Logs Page</h1>
 				<ul id="logs-index">
 					{logs.map((logs) => {
@@ -30,7 +30,7 @@ class Index extends React.Component {
 				<button>
 					<a href="/logs/new">Create log</a>
 				</button>
-			</DefaultLayout>
+			</EditPageLayout>
 		);
 	}
 }
