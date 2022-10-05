@@ -7,24 +7,29 @@ class Index extends React.Component {
 
 		return (
 			<DefaultLayout className="container" title="All Logs" group="logs">
-				<h1>Logs Index Page</h1>
+				<h1>Logs Page</h1>
 				<ul id="logs-index">
-					{logs.map((log) => {
+					{logs.map((logs) => {
+						const { _id, title, entry, shipIsBroken } = logs;
 						return (
-							<li key={log._id}>
-								The <a href={`/logs/${log.id}`}>{logs.title}</a> { logs.entry } the
-								{logs.shipIsBroken}.
-								Created On: {logs.createdAt};
-
-								Edited: {logs.updatedAt}
+							<li key={_id}>
+								<a href={`/logs/${_id}`}>{title}</a>
+								<p>{entry}</p>
+								<p>
+									{shipIsBroken
+										? "The ship is broken"
+										: "The ship is NOT broken"}
+								</p>
+								<br />
+								<br />
 							</li>
 						);
 					})}
 				</ul>
 
-				<nav>
+				<button>
 					<a href="/logs/new">Create log</a>
-				</nav>
+				</button>
 			</DefaultLayout>
 		);
 	}

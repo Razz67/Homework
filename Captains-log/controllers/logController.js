@@ -43,7 +43,7 @@ const updateOneLog = (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).redirect(`/logs/${updatedLog._id}`);
+			res.status(200).redirect(`/logs/${updatedLog._id}`);  
 		}
 	});
 };
@@ -86,7 +86,7 @@ const showOneLog = (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("logs/Show", { log: foundLog });
+			res.status(200).render("logs/Show", { logs: foundLog });
 		}	
 	});
 };

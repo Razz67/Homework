@@ -8,13 +8,13 @@ const router = express.Router();
 const {
 	findAllLogs,
 	showNewView,
-	createNewLog,
-	showOneLog,
-	showEditView,
-	updateOneLog,
 	deleteOneLog,
+	updateOneLog,
+	createNewLog,
+	showEditView,
 	seedData,
 	clearData,
+	showOneLog,
 } = require("../controllers/logController");
 
 

@@ -8,33 +8,36 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1.5em;
     text-align: center;
-    /* background-image: url(../images/starTrek.jfif);
+    background-image: url(../images/starTrek.jfif);
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
 }
 
 .container {
     display: grid;
 }
 
-p {
-    color: #000;
+p, h1 {
+    color: #fff;
 }
 
 li {
     list-style: none;
     margin-left: 50px;
-    color: #000;
 }
 
 a {
     text-decoration: none;
-    color: #000;
+    color: chartreuse;
 }
 
 a:hover {
     background-color: blue;
     color: #FFF;
     font-weight: 600;
+}
+
+button {
+    background-color: #000;
 }
 

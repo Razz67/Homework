@@ -8,6 +8,7 @@ class Edit extends React.Component {
 			<DefaultLayout className="container" title={`Edit ${title}`} group="logs">
 				<h1>Edit Log Page</h1>
 				<form action={`/logs/${_id}?_method=PUT`} method="POST">
+				
 					<label htmlFor="title">Title: </label>
 					<input type="text" id="title" name="title" defaultValue={title} />
 
