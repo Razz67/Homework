@@ -18,7 +18,7 @@ h2 {
 .visitors {
     position: relative;
     background-color: #4e586e;
-    min-height: 576px;
+    min-height: 400px;
 }
 
 
@@ -44,3 +44,7 @@ h2 {
     font-size: 1.2em;
     color: #bcc3d1;
 }
+
+/* visitors section background taken from istock photes
+   ****** Not for commercial use ********
+*/
