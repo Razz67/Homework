@@ -1,0 +1,219 @@
+
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+body {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3f4c6b+0,3f4c6b+100;Blue+Grey+Flat */
+  background: rgb(63, 76, 107);
+  /* Old browsers */
+  background: -moz-linear-gradient(top, rgb(63, 76, 107) 0%, rgb(63, 76, 107) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgb(63, 76, 107) 0%, rgb(63, 76, 107) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgb(63, 76, 107) 0%, rgb(63, 76, 107) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f4c6b', endColorstr='#3f4c6b', GradientType=0);
+  /* IE6-9 */
+}
+
+#root {
+  display: grid;
+  justify-content:space-around;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-rows: 150px 288px 288px 288px;
+  grid-template-areas:
+"aside card1 card2 card3"
+"aside  main main main"
+"aside  main main main";
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.card-1 {
+  grid-area: card1;
+}
+.card-2 {
+  grid-area: card2;
+}
+.card-3 {
+  grid-area: card3;
+}
+
+.main {
+  grid-area: main;
+} */
+
+/* ********** Aside Section ********** */
+
+/* li {
+  list-style: none;
+}
+
+li:hover {
+  color: #fff;
+}
+
+.aside {
+  width: 16rem;
+  text-align: center;
+  color: darkgrey;
+  background-color: #4e586e;
+}
+
+ul {
+  text-align: left;
+  line-height: 70px;
+} */
+
+
+/* ********** End Aside ********** */
+
+
+/* ********** Card Section ********** */
+
+/* .flex {
+  display: grid;
+  justify-content: center;
+}
+
+
+#avatars {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+ */
+
+/* .image {
+  flex-basis: 40%;
+} */
+
+/* .image {
+  margin-bottom: 15px;
+}
+
+.image:first-child {
+  margin-top: 30px;
+}
+
+
+.card-header {
+  background-color: #4e586e;
+  color: #fff;
+  text-align: left; */
+  /* padding: 10px; */
+/* } */
+
+/* .card-body {
+  background-color: #4e586e;
+}
+
+.card {
+  width: 16rem;
+  border: none;
+  /* text-align: center; */
+/* } */ 
+
+/* .card-title {
+  color: #fff;
+  font-size: 60px;
+}
+
+.card-text {
+  color: #fff;
+}
+
+#green {
+  color: chartreuse;
+}
+
+#red {
+  color: rgb(238, 71, 149)
+}
+
+.text {
+  float: right;
+  font-size: 11px;
+  padding-left: 15px;
+  color: #b3c2e2;
+  line-height: 1;
+}
+
+.number {
+  color: #fff;
+  font-size: 16px;
+} */
+
+/* ********** End Card Section ********** */
+
+/* ********** Content Section ********** */
+
+/* .main>p,
+h2 {
+  padding: 20px;
+  position: relative;
+}
+
+.main h2 {
+  font-size: 80px;
+}
+
+.main {
+  position: relative; */
+  /* background-color: #4e586e; */
+  /* background-repeat: no-repeat;
+  color: rgb(134, 133, 133);
+}
+
+.main::before {
+  position: absolute;
+  content: "";
+  background-image: url(components/images/istockphoto.jpg);
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.55;
+} */
+
+/* ********** End main Section ********** */
+
+/* ********** Media Queries ********** */
+

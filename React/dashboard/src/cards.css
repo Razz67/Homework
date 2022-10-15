@@ -1,0 +1,68 @@
+.cards {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    width: 18rem;
+    border: none;
+}
+
+.card-1 {
+    background-color: rgb(55, 59, 59);
+    color: gray;
+    min-height: 300px;
+    max-height: 400px;
+}
+
+.card-2 {
+    background-color: rgb(55, 59, 59);
+    color: gray;
+    min-height: 300px;
+    max-height: 400px;
+}
+
+.card-3 {
+    background-color: rgb(55, 59, 59);
+    color: gray;
+    min-height: 300px;
+    max-height: 400px;
+}
+
+.image {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 15px;
+    height: 100%;
+}
+
+.card-header {
+    color: #bcc3d1;
+}
+
+.card-body {
+    margin-top: 20px;
+    color: #bcc3d1;
+}
+
+.card-title {
+    color: #bcc3d1;
+    font-size: 60px;
+}
+
+#green {
+    color: chartreuse;
+}
+
+#red {
+    color: red;
+}
+
+
+.number {
+    color: #bcc3d1;
+    font-size: 18;
+}
