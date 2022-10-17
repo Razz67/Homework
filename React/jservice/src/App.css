@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --background: rgb(42, 54, 152);
+    --white: #fff;
+    --chartrues: #7ff007;
+    --yellow: rgb(207, 207, 16);
+}
+
+.App {
+    font-family: 'Poppins', sans-serif;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background);
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.play {
+    color: var(--chartrues);
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h1, h2 {
+    color: var(--white);
+}
+
+#score-down {
+    text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        width: 250px;
+        height: 50px;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--white);
+    background-color: var(--yellow);
+
+}
+
+#score-down:hover {
+    background-color: var(--chartrues);
+}
+
+#resetscore {
+    background: red;
+    color: var(--white);
+}
+
+.btn {
+    text-align: center;
+    background: var(--chartrues);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--chartrues);
+    font-weight: 800;
+}
+
+
+#category-text {
+    font-size: 2rem;
+    color: var(--chartrues);
+}
+
+#value {
+    font-size: 2rem;
+    color: var(--chartrues);
+}
+
+#answer-text {
+    font-size: 2.5rem;
+    color: var(--chartrues);
+}
+

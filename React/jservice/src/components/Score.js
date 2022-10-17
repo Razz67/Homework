@@ -1,73 +1,40 @@
 import { useState } from "react";
+export default function Score({ question }) {
 
-export default function Score(props) {
+	const [score, setScore] = useState(0);
 
-let [score, setScore] = useState(0);
-let [value, setValue] = useState(0);
-
-const handleIncrease = () => {
-		setScore(score + value);
+	function scoreUp() {
+		setScore(score + question.value);
 	};
 
-	const handleDecrease = () => {
-        setScore(score - value);
+	function scoreDown() {
+		if (score - question.value < 1) {
+			setScore(0);
+		} else {
+			setScore(score - question.value);
+			console.log(question.value);
+		}
 	};
 
-	const handleChange = (evt) => {
-        setValue(evt.target.value);
+	function scoreReset() {
+		setScore(0);
 	};
-
-	// const handleReveal = (evt) => {
-	// 	evt.prevtDefault();
-	// 	setValue({
-	// 		isVisible: (this.isVisible = !this.isVisible),
-	// 	});
-	// };
-
-	// const handleQuestion = (evt) => {
-	// 	evt.prevtDefault();
-	// 	setValue(
-	// 		{
-	// 			questionURL: baseURL,
-	// 			isVisible: false,
-	// 		},
-	// 		() => {
-	// 			fetch(this.state.questionURL)
-	// 				.then((res) => res.json())
-	// 				.then((json) =>
-	// 					this.setState({
-	// 						category: json[0].category.title,
-	// 						value: json[0].value,
-	// 						answer: json[0].answer,
-	// 						question: json[0].question,
-	// 					})
-	// 				);
-	// 		}
-	// 	);
-	// };
-
-	const handleReset = (evt) => {
-    evt.prevtDefault();
-    this.setState({ score: 0 });
-  }
-
-
-
 
 	return (
 		<>
-
-
-			<h2 onChange={handleChange}>Score: {score}</h2>
-			<button onClick={handleDecrease} className="decrease">
-				Decrease
-			</button>
-			<button onClick={handleIncrease} className="increase">
-				Increase
-			</button>
-			<button onClick={handleReset} className="reset">
-				Reset
-			</button>
+			<h1>Current Score: {score}{" "}</h1>
+			<div>
+				<button className="btn" id="scoreup" onClick={scoreUp}>
+					Add Points
+				</button>
+				<button className="deduct-btn" id="score-down" onClick={scoreDown}>
+					Deduct Points
+				</button>
+				<button className="btn" id="resetscore" onClick={scoreReset}>
+					{" "}
+					Reset{" "}
+				</button>
+			</div>
 		</>
-    ); 
-} 
+	);
+}

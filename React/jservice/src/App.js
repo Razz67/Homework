@@ -1,46 +1,45 @@
 import "./App.css";
-import { useState } from "react";
-import GameInfo from "./components/GameInfo";
+import { useState, useEffect } from "react";
+import Questions from "./components/Question";
 import Score from "./components/Score";
 
 export default function App() {
 
-  const baseURL = `https://jservice.io/api/random/?count=10&category=${category}`;
+	let [question, setQuestion] = useState("");
+	let [answer, setAnswer] = useState("");
 
-  let [question, setQuestion] = useState({});
+	const handleQuestion = async () => {
+		const response = await fetch("http://jservice.io/api/random");
+		const data = await response.json();
 
-const getQuestion = async (question) => {
-    const response = await fetch(baseURL);
-    const data = await response.json();
-      setGameInfo(data);
-};
+		setQuestion(data[0]);
+		setAnswer("");
+	};
 
+	useEffect(() => {
+		fetch("http://jservice.io/api/random")
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setQuestion(data[0]);
+				console.log(data[0]);
+			});
+	}, []);
 
-
-
-
-
-
-
-	// GameInfo = {
-	// 	baseURL: "http://jservice.io/api/random",
-	// 	score: 0,
-	// 	category: "",
-	// 	value: "",
-	// 	answer: "",
-	// 	question: "",
-	// 	isVisible: false,
-	// };
-
-		return (
-			<div className="App">
-				<h1 className="title"> Welcome to Jeopardy</h1>
-
-				<Score
-					score={GameInfo.score}
-				/>
-
-				<GameInfo getQuestion={getQuestion}	/>
-			</div>
-		);
+	function handleAnswer() {
+		setAnswer("Question: What is " + question.answer + "?");
 	}
+	return (
+		<div className="App">
+			<h1>Welcome to Jeopardy!</h1>
+			<Score question={question} />
+			<h2 className="play" >Let's Play!</h2>
+			<button className="btn" onClick={handleQuestion}>Get Question</button>
+			<Questions question={question} />
+			<button className="btn" onClick={handleAnswer}>Show Question</button>
+			<h3> {answer} </h3>
+		</div>
+	);
+}
+
