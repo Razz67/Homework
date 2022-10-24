@@ -34,6 +34,9 @@ to run this project in your development environment
 1. A button component to render more ships to the page
 2. Images for each starship
 
+### Incidentals
+Background image courtesy of https://www.wallpaperflare.com/search?wallpaper=star+wars (NOT FOR COMMERCIAL USE)
+
 
 
 
